@@ -4,6 +4,7 @@
 #include "Vector2.h"
 #include <string>
 #include "matrix.h"
+#include <gl/gl.h>
 
 using namespace std;
 

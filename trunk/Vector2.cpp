@@ -7,7 +7,7 @@ Vector2::Vector2()
 
 }
 
-Vector2::Vector2(const real x, const real y){
+Vector2::Vector2(const Real x, const Real y){
 
     this->x = x;
     this->y = y;
