@@ -1,8 +1,8 @@
-#define VECTOR2_H
-
+#ifndef VECTOR_H
+#define VECTOR_H
 typedef float Real;
-class Vector2
-{
+
+class Vector2{
     public:
         Vector2();
         Vector2(const Real x, const Real y);
@@ -12,3 +12,5 @@ class Vector2
     protected:
     private:
 };
+
+#endif

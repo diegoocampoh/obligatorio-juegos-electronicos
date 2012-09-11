@@ -63,6 +63,7 @@ void Engine::reset(){
 }
 
 void Engine::draw_test(Real *vertices, Real *colores, int cantVertices){
+    glTranslatef(0.0,0.0,-4.0);
     glEnableClientState(GL_VERTEX_ARRAY);
     glEnableClientState(GL_COLOR_ARRAY);
     glVertexPointer(3,GL_FLOAT,0,vertices);
