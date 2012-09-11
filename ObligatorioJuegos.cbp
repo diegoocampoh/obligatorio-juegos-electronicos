@@ -40,8 +40,12 @@
 			<Add library="gdi32" />
 			<Add library="winmm" />
 			<Add library="dxguid" />
+			<Add library="opengl32" />
+			<Add library="glu32" />
 			<Add directory="C:\SDL\lib" />
 		</Linker>
+		<Unit filename="Engine.cpp" />
+		<Unit filename="Engine.h" />
 		<Unit filename="Vector2.cpp" />
 		<Unit filename="Vector2.h" />
 		<Unit filename="cb.bmp" />

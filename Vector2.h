@@ -1,14 +1,14 @@
 #define VECTOR2_H
 
-typedef float real;
+typedef float Real;
 class Vector2
 {
     public:
         Vector2();
-        Vector2(const real x, const real y);
+        Vector2(const Real x, const Real y);
         virtual ~Vector2();
-        real x;
-        real y;
+        Real x;
+        Real y;
     protected:
     private:
 };
