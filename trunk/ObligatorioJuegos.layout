@@ -2,18 +2,18 @@
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Debug" />
 	<File name="Engine.cpp" open="1" top="1" tabpos="3">
-		<Cursor position="1679" topLine="26" />
+		<Cursor position="1041" topLine="42" />
 	</File>
 	<File name="Engine.h" open="1" top="0" tabpos="2">
-		<Cursor position="589" topLine="7" />
+		<Cursor position="660" topLine="7" />
 	</File>
 	<File name="Vector2.cpp" open="1" top="0" tabpos="5">
 		<Cursor position="116" topLine="0" />
 	</File>
 	<File name="Vector2.h" open="1" top="0" tabpos="4">
-		<Cursor position="194" topLine="0" />
+		<Cursor position="32" topLine="0" />
 	</File>
 	<File name="main.cpp" open="1" top="0" tabpos="1">
-		<Cursor position="330" topLine="0" />
+		<Cursor position="4210" topLine="19" />
 	</File>
 </CodeBlocks_layout_file>
