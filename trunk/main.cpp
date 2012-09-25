@@ -6,6 +6,7 @@
 #include "matrix.h"
 #include <gl/gl.h>
 #include "Engine.h"
+#include "Escenario.h"
 
 using namespace std;
 
@@ -19,12 +20,15 @@ int main ( int argc, char** argv )
 */
 
     Escenario* esc = new Escenario();
-    esc.addObjeto(new Objeto());
+    Objeto* obj = new Objeto();
+    esc->objetos.push_back(obj);
+   // esc.addObjeto(obj);
 
 
     Engine* Eng = new Engine(500,500);
     Eng->clear();
     Eng->update();
+
 
 
     Real vertices[] = {
@@ -123,12 +127,21 @@ int main ( int argc, char** argv )
         } // end of message processing
         Eng->clear();
         Eng->push();
-        Eng->set_rotation(theta);
-        Eng->draw_test(vertices,colores,36);
+            glTranslatef(0.0,0.0,-4.0);
+                Eng->push();
+                        Eng->set_translation(-1,0);
+                        Eng->set_rotation(theta);
+                        Eng->draw_test(vertices,colores,36);
+                 Eng->pop();
+                 Eng->push();
+                        Eng->set_translation(1,0);
+                        Eng->set_rotation(-theta*2);
+                        Eng->draw_test(vertices,colores,12);
+                Eng->pop();
         Eng->pop();
         Eng->update();
 
-        theta += 0.03f;
+        theta += 1.13f;
         // DRAWING STARTS HERE
 
         // clear screen

@@ -39,7 +39,7 @@ void Engine::close(){
 }
 
 void Engine::set_rotation(Real angle){
-    glRotatef(angle,0,0,1);
+    glRotatef(angle,1,-1,1);
 }
 
 void Engine::set_translation(Real x,Real y){
@@ -63,7 +63,6 @@ void Engine::reset(){
 }
 
 void Engine::draw_test(Real *vertices, Real *colores, int cantVertices){
-    glTranslatef(0.0,0.0,-4.0);
     glEnableClientState(GL_VERTEX_ARRAY);
     glEnableClientState(GL_COLOR_ARRAY);
     glVertexPointer(3,GL_FLOAT,0,vertices);

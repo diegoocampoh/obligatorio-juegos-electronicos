@@ -3,14 +3,14 @@
 #include "Objeto.h"
 #include <list>
 
+using namespace std;
+
 class Escenario
 {
     public:
         Escenario();
         virtual ~Escenario();
-        void addObjeto(Objeto * obj);
-        list<Objeto*> objetos;
-
+        std::list<Objeto*> objetos;
 
     protected:
     private:
