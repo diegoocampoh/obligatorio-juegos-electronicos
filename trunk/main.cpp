@@ -18,6 +18,10 @@ int main ( int argc, char** argv )
     return 0;
 */
 
+    Escenario* esc = new Escenario();
+    esc.addObjeto(new Objeto());
+
+
     Engine* Eng = new Engine(500,500);
     Eng->clear();
     Eng->update();
