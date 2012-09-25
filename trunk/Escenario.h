@@ -11,6 +11,7 @@ class Escenario
         Escenario();
         virtual ~Escenario();
         std::list<Objeto*> objetos;
+        void pintar();
 
     protected:
     private:
