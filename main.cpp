@@ -25,11 +25,9 @@ int main ( int argc, char** argv )
    // esc.addObjeto(obj);
 
 
-    Engine* Eng = new Engine(500,500);
+    Engine* Eng = new Engine(800,600);
     Eng->clear();
     Eng->update();
-
-
 
     Real vertices[] = {
                         1, 1, 1,  -1, 1, 1,  -1,-1, 1,      // v0-v1-v2 (adelante)

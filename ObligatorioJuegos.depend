@@ -205,7 +205,7 @@
 	"Objeto.h"
 	<list>
 
-1348611285 c:\repojuegos\objeto.h
+1348612244 c:\repojuegos\objeto.h
 	<list>
 	"Fuerza.h"
 	"Vector2.h"
@@ -219,7 +219,7 @@
 1348604743 c:\repojuegos\rectangulo.h
 	"Objeto.h"
 
-1348610051 source:c:\repojuegos\main.cpp
+1348612237 source:c:\repojuegos\main.cpp
 	<stdlib.h>
 	<SDL.h>
 	<iostream>
