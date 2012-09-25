@@ -1,7 +1,7 @@
 #ifndef RECTANGULO_H
 #define RECTANGULO_H
 
-#include <Objeto.h>
+#include "Objeto.h"
 
 
 class Rectangulo : public Objeto

@@ -9,10 +9,10 @@
 
 1347402145 c:\repojuegos\vector2.h
 
-1347402145 source:c:\repojuegos\engine.cpp
+1348609699 source:c:\repojuegos\engine.cpp
 	"Engine.h"
 
-1347402145 c:\repojuegos\engine.h
+1348606507 c:\repojuegos\engine.h
 	"Vector2.h"
 	<gl/gl.h>
 	<SDL.h>
@@ -197,4 +197,42 @@
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
+
+1348605877 source:c:\repojuegos\escenario.cpp
+	"Escenario.h"
+
+1348610867 c:\repojuegos\escenario.h
+	"Objeto.h"
+	<list>
+
+1348611285 c:\repojuegos\objeto.h
+	<list>
+	"Fuerza.h"
+	"Vector2.h"
+
+1348600624 source:c:\repojuegos\objeto.cpp
+	"Objeto.h"
+
+1348600674 source:c:\repojuegos\rectangulo.cpp
+	"Rectangulo.h"
+
+1348604743 c:\repojuegos\rectangulo.h
+	"Objeto.h"
+
+1348610051 source:c:\repojuegos\main.cpp
+	<stdlib.h>
+	<SDL.h>
+	<iostream>
+	"Vector2.h"
+	<string>
+	"matrix.h"
+	<gl/gl.h>
+	"Engine.h"
+	"Escenario.h"
+
+1348610951 c:\repojuegos\fuerza.h
+	"Vector2.h"
+
+1348610575 source:c:\repojuegos\fuerza.cpp
+	"Fuerza.h"
 
