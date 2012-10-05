@@ -29,7 +29,7 @@ int main ( int argc, char** argv )
     Eng->clear();
     Eng->update();
 
-    Real vertices[] = {
+    real vertices[] = {
                         1, 1, 1,  -1, 1, 1,  -1,-1, 1,      // v0-v1-v2 (adelante)
                        -1,-1, 1,   1,-1, 1,   1, 1, 1,      // v2-v3-v0
 
@@ -48,7 +48,7 @@ int main ( int argc, char** argv )
                         1,-1,-1,  -1,-1,-1,  -1, 1,-1,      // v4-v7-v6 (atras)
                        -1, 1,-1,   1, 1,-1,   1,-1,-1 };    // v6-v5-v4
 
-    Real colores[]   = {
+    real colores[]   = {
                         1, 1, 1,   1, 1, 0,   1, 0, 0,      // v0-v1-v2 (adelante)
                         1, 0, 0,   1, 0, 1,   1, 1, 1,      // v2-v3-v0
 

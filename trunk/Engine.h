@@ -6,6 +6,8 @@
 #include <SDL.h>
 #include <assert.h>
 
+using namespace engine;
+
 class Engine
 {
     public:
@@ -14,15 +16,15 @@ class Engine
         void clear();
         void update();
         void close();
-        void set_rotation(Real angle);
-        void set_translation(Real x, Real y);
-        void set_scale(Real x, Real y);
+        void set_rotation(real angle);
+        void set_translation(real x, real y);
+        void set_scale(real x, real y);
         void push();
         void pop();
         void reset();
 
         SDL_Surface * Surface;
-        void draw_test(Real *vertices, Real *colores, int cantVertices);
+        void draw_test(real *vertices, real *colores, int cantVertices);
     protected:
     private:
         int Width,Height;
