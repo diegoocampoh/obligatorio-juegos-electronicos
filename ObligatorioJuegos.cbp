@@ -46,12 +46,25 @@
 		</Linker>
 		<Unit filename="Engine.cpp" />
 		<Unit filename="Engine.h" />
-		<Unit filename="Vector2.cpp" />
+		<Unit filename="Escenario.cpp" />
+		<Unit filename="Escenario.h" />
+		<Unit filename="Fuerza.cpp" />
+		<Unit filename="Fuerza.h" />
+		<Unit filename="Objeto.cpp" />
+		<Unit filename="Objeto.h" />
+		<Unit filename="ObligatorioJuegos.cbp" />
+		<Unit filename="ObligatorioJuegos.depend" />
+		<Unit filename="ObligatorioJuegos.layout" />
+		<Unit filename="Rectangulo.cpp" />
+		<Unit filename="Rectangulo.h" />
 		<Unit filename="Vector2.h" />
 		<Unit filename="cb.bmp" />
 		<Unit filename="main.cpp" />
 		<Unit filename="matrix.cpp" />
 		<Unit filename="matrix.h" />
+		<Unit filename="precision.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
 		<Extensions>
 			<code_completion />
 			<debugger />
