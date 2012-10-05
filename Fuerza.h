@@ -2,13 +2,16 @@
 #define FUERZA_H
 
 #include "Vector2.h"
+#include "precision.h"
+
+using namespace engine;
 
 class Fuerza
 {
     public:
         Fuerza();
         virtual ~Fuerza();
-        Real magnitud;
+        real magnitud;
         Vector2* direccion;
 
     protected:

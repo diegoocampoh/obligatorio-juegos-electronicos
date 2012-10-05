@@ -38,15 +38,15 @@ void Engine::close(){
     SDL_Quit();
 }
 
-void Engine::set_rotation(Real angle){
+void Engine::set_rotation(real angle){
     glRotatef(angle,1,-1,1);
 }
 
-void Engine::set_translation(Real x,Real y){
+void Engine::set_translation(real x,real y){
     glTranslatef(x,y,0);
 }
 
-void Engine::set_scale(Real x, Real y){
+void Engine::set_scale(real x, real y){
     glScalef(x,y,1);
 }
 
@@ -62,7 +62,7 @@ void Engine::reset(){
     glLoadIdentity();
 }
 
-void Engine::draw_test(Real *vertices, Real *colores, int cantVertices){
+void Engine::draw_test(real *vertices, real *colores, int cantVertices){
     glEnableClientState(GL_VERTEX_ARRAY);
     glEnableClientState(GL_COLOR_ARRAY);
     glVertexPointer(3,GL_FLOAT,0,vertices);

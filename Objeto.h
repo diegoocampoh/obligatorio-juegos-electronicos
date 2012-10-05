@@ -11,8 +11,8 @@ class Objeto
     public:
         Objeto();
         virtual ~Objeto();
-        Real* vertices;
-        Real* colores;
+        real* vertices;
+        real* colores;
         std::list<Fuerza*> fuerzas;
         Vector2* posicion;
         Vector2* velocidad;
