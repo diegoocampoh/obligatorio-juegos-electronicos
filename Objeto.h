@@ -19,7 +19,7 @@ class Objeto
 
         Vector2* calcularAceleracion();
         void actualizarPosicion();
-        void pintar();
+        virtual void pintar();
     protected:
     private:
 };

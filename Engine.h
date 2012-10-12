@@ -11,7 +11,7 @@ using namespace engine;
 class Engine
 {
     public:
-        Engine(int width, int height);
+        static Engine* Instance();
         virtual ~Engine();
         void clear();
         void update();
@@ -26,8 +26,13 @@ class Engine
         SDL_Surface * Surface;
         void draw_test(real *vertices, real *colores, int cantVertices);
     protected:
+
+      Engine();
+      Engine(const Engine & ) ;
+      Engine &operator= (const Engine & ) ;
     private:
         int Width,Height;
+        static Engine* pinstance;
 };
 
 #endif // ENGINE_H

@@ -1,7 +1,17 @@
 #include "Engine.h"
 
-Engine::Engine(int width, int height){
+Engine* Engine::pinstance = 0;
+Engine* Engine::Instance()
+{
+    if(pinstance == 0)
+        pinstance = new Engine();
+    return pinstance;
+}
 
+Engine::Engine(){
+    int width, height;
+    height = 800;
+    width = 600;
     Surface = NULL;
     this->Width = width;
     this->Height = height;
