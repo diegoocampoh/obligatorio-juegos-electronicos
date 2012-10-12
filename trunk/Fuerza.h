@@ -9,7 +9,7 @@ using namespace engine;
 class Fuerza
 {
     public:
-        Fuerza();
+        Fuerza(Vector2* direccion, real magnitud);
         virtual ~Fuerza();
         real magnitud;
         Vector2* direccion;

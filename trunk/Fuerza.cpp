@@ -1,11 +1,12 @@
 #include "Fuerza.h"
 
-Fuerza::Fuerza()
+Fuerza::Fuerza(Vector2* direccion, real magnitud)
 {
-    //ctor
+    this->direccion = direccion;
+    this->magnitud = magnitud;
 }
 
 Fuerza::~Fuerza()
 {
-    //dtor
+    delete direccion;
 }

@@ -2,10 +2,17 @@
 
 Objeto::Objeto()
 {
-    //ctor
+
 }
+
+
 
 Objeto::~Objeto()
 {
-    //dtor
+
+}
+
+void Objeto::pintar()
+{
+
 }
