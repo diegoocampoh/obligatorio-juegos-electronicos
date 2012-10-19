@@ -7,7 +7,6 @@
 #include <gl/gl.h>
 #include "Engine.h"
 #include "Escenario.h"
-#include "Rectangulo.h"
 
 using namespace std;
 
@@ -16,13 +15,6 @@ int main ( int argc, char** argv )
     float theta = 0.0f;
     bool done = false;
     Escenario* esc = new Escenario();
-    Engine* Eng = Engine::Instance();
-    Rectangulo* obj = new Rectangulo();
-    obj->posicion = new Vector2(0,0);
-    obj->fuerzas.push_back(new Fuerza(new Vector2(0,1), 1));
-    esc->objetos.push_back(obj);
-    Eng->clear();
-    Eng->update();
 
     // program main loop
     while (!done){

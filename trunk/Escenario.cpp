@@ -1,8 +1,16 @@
 #include "Escenario.h"
 #include "Engine.h"
+#include "Rectangulo.h"
+
 Escenario::Escenario()
 {
-
+    Engine* Eng = Engine::Instance();
+    Rectangulo* obj = new Rectangulo();
+    obj->posicion = new Vector2(0,0);
+    obj->fuerzas.push_back(new Fuerza(new Vector2(0,1), 1));
+    this->objetos.push_back(obj);
+    Eng->clear();
+    Eng->update();
 }
 
 
