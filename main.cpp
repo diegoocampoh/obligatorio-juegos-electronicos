@@ -13,56 +13,7 @@ using namespace std;
 
 int main ( int argc, char** argv )
 {
-
-
-    real verticesCuadrado [] = {
-                                1, 1, 1,  -1, 1, 1,  -1,-1, 1,      // v0-v1-v2 (adelante)
-                       -1,-1, 1,   1,-1, 1,   1, 1, 1      // v2-v3-v0
-                                };
-        real coloresCuadrado[]   = {
-                        1, 1, 1,   1, 1, 0,   1, 0, 0,      // v0-v1-v2 (adelante)
-                        1, 0, 0,   1, 0, 1,   1, 1, 1  };    // v2-v3-v0
-
-    real vertices[] = {
-                        1, 1, 1,  -1, 1, 1,  -1,-1, 1,      // v0-v1-v2 (adelante)
-                       -1,-1, 1,   1,-1, 1,   1, 1, 1,      // v2-v3-v0
-
-                        1, 1, 1,   1,-1, 1,   1,-1,-1,      // v0-v3-v4 (derecha)
-                        1,-1,-1,   1, 1,-1,   1, 1, 1,      // v4-v5-v0
-
-                        1, 1, 1,   1, 1,-1,  -1, 1,-1,      // v0-v5-v6 (arriba)
-                       -1, 1,-1,  -1, 1, 1,   1, 1, 1,      // v6-v1-v0
-
-                       -1, 1, 1,  -1, 1,-1,  -1,-1,-1,      // v1-v6-v7 (izquierda)
-                       -1,-1,-1,  -1,-1, 1,  -1, 1, 1,      // v7-v2-v1
-
-                       -1,-1,-1,   1,-1,-1,   1,-1, 1,      // v7-v4-v3 (abajo)
-                        1,-1, 1,  -1,-1, 1,  -1,-1,-1,      // v3-v2-v7
-
-                        1,-1,-1,  -1,-1,-1,  -1, 1,-1,      // v4-v7-v6 (atras)
-                       -1, 1,-1,   1, 1,-1,   1,-1,-1 };    // v6-v5-v4
-
-    real colores[]   = {
-                        1, 1, 1,   1, 1, 0,   1, 0, 0,      // v0-v1-v2 (adelante)
-                        1, 0, 0,   1, 0, 1,   1, 1, 1,      // v2-v3-v0
-
-                        1, 1, 1,   1, 0, 1,   0, 0, 1,      // v0-v3-v4 (derecha)
-                        0, 0, 1,   0, 1, 1,   1, 1, 1,      // v4-v5-v0
-
-                        1, 1, 1,   0, 1, 1,   0, 1, 0,      // v0-v5-v6 (arriba)
-                        0, 1, 0,   1, 1, 0,   1, 1, 1,      // v6-v1-v0
-
-                        1, 1, 0,   0, 1, 0,   0, 0, 0,      // v1-v6-v7 (izquierda)
-                        0, 0, 0,   1, 0, 0,   1, 1, 0,      // v7-v2-v1
-
-                        0, 0, 0,   0, 0, 1,   1, 0, 1,      // v7-v4-v3 (abajo)
-                        1, 0, 1,   1, 0, 0,   0, 0, 0,      // v3-v2-v7
-
-                        0, 0, 1,   0, 0, 0,   0, 1, 0,      // v4-v7-v6 (atras)
-                        0, 1, 0,   0, 1, 1,   0, 0, 1 };    // v6-v5-v4
-
     float theta = 0.0f;
-    // program main loop
     bool done = false;
     Escenario* esc = new Escenario();
     Engine* Eng = Engine::Instance();
@@ -73,6 +24,7 @@ int main ( int argc, char** argv )
     Eng->clear();
     Eng->update();
 
+    // program main loop
     while (!done){
 //         message processing loop
         SDL_Event event;
