@@ -1,6 +1,7 @@
 #include "Rectangulo.h"
 #include "precision.h"
 #include "Engine.h"
+
 Rectangulo::Rectangulo()
 {
     this->vertices = new real[18] {
@@ -24,6 +25,6 @@ void Rectangulo::pintar()
     Engine* Eng = Engine::Instance();
     Eng->push();
         Eng->set_translation(this->posicion->x,this->posicion->y);
-        Eng->draw_test(vertices,colores,6);
+        Engine::Instance()->draw_test(vertices,colores,6);
     Eng->pop();
 }

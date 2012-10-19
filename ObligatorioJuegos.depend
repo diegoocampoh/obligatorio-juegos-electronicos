@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1350687314 source:c:\repojuegos\main.cpp
+1350688089 source:c:\repojuegos\main.cpp
 	<stdlib.h>
 	<SDL.h>
 	<iostream>
@@ -25,7 +25,7 @@
 1349477730 c:\repojuegos\vector2.h
 	"precision.h"
 
-1350687530 source:c:\repojuegos\engine.cpp
+1350690040 source:c:\repojuegos\engine.cpp
 	"Engine.h"
 
 1348610575 1
@@ -241,7 +241,7 @@
 
 1117207200 c:\sdl\include\gl\gl.h
 
-1350687314 source:c:\repojuegos\escenario.cpp
+1350688664 source:c:\repojuegos\escenario.cpp
 	"Escenario.h"
 	"Engine.h"
 
@@ -257,7 +257,7 @@
 1350687314 source:c:\repojuegos\objeto.cpp
 	"Objeto.h"
 
-1350687314 source:c:\repojuegos\rectangulo.cpp
+1350690030 source:c:\repojuegos\rectangulo.cpp
 	"Rectangulo.h"
 	"precision.h"
 	"Engine.h"

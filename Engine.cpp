@@ -75,9 +75,11 @@ void Engine::reset(){
 void Engine::draw_test(real *vertices, real *colores, int cantVertices){
     glEnableClientState(GL_VERTEX_ARRAY);
     glEnableClientState(GL_COLOR_ARRAY);
+
     glVertexPointer(3,GL_FLOAT,0,vertices);
     glColorPointer(3, GL_FLOAT, 0, colores);
     glDrawArrays(GL_TRIANGLES,0,cantVertices);
+
     glDisableClientState(GL_COLOR_ARRAY);
     glDisableClientState(GL_VERTEX_ARRAY);
 }
