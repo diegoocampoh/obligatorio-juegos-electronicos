@@ -11,7 +11,7 @@ Engine* Engine::Instance()
 Engine::Engine(){
     int width, height;
     height = 800;
-    width = 600;
+    width = 800;
     Surface = NULL;
     this->Width = width;
     this->Height = height;

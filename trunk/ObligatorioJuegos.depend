@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1349474194 source:c:\repojuegos\main.cpp
+1350687314 source:c:\repojuegos\main.cpp
 	<stdlib.h>
 	<SDL.h>
 	<iostream>
@@ -9,22 +9,23 @@
 	<gl/gl.h>
 	"Engine.h"
 	"Escenario.h"
+	"Rectangulo.h"
 
 1255796850 ne
 	<gl/gl.h>
 
 1348614682 
 
-1346974219 c:\repojuegos\matrix.h
+1346977819 c:\repojuegos\matrix.h
 
 1347392068 source:c:\repojuegos\vector2.cpp
 	"Vector2.h"
 	"Vector2.h"
 
-1349474130 c:\repojuegos\vector2.h
+1349477730 c:\repojuegos\vector2.h
 	"precision.h"
 
-1349222900 source:c:\repojuegos\engine.cpp
+1350687530 source:c:\repojuegos\engine.cpp
 	"Engine.h"
 
 1348610575 1
@@ -49,7 +50,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1255804050 c:\sdl\include\sdl.h
+1255800450 c:\sdl\include\sdl.h
 	"SDL_main.h"
 	"SDL_stdinc.h"
 	"SDL_audio.h"
@@ -68,20 +69,20 @@
 	"begin_code.h"
 	"close_code.h"
 
-1349474183 c:\repojuegos\engine.h
+1350687314 c:\repojuegos\engine.h
 	"Vector2.h"
 	<gl/gl.h>
 	<SDL.h>
 	<assert.h>
 
-1255804050 c:\sdl\include\sdl_main.h
+1255800450 c:\sdl\include\sdl_main.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 	"begin_code.h"
 	"close_code.h"
 
-1255804050 c:\sdl\include\sdl_stdinc.h
+1255800450 c:\sdl\include\sdl_stdinc.h
 	"SDL_config.h"
 	<sys/types.h>
 	<stdio.h>
@@ -107,17 +108,17 @@
 	<stdlib.h>
 	"close_code.h"
 
-1255804064 c:\sdl\include\sdl_config.h
+1255800464 c:\sdl\include\sdl_config.h
 	"SDL_platform.h"
 	<stdarg.h>
 
-1255804050 c:\sdl\include\sdl_platform.h
+1255800450 c:\sdl\include\sdl_platform.h
 
-1255804050 c:\sdl\include\begin_code.h
+1255800450 c:\sdl\include\begin_code.h
 
-1255804050 c:\sdl\include\close_code.h
+1255800450 c:\sdl\include\close_code.h
 
-1255804050 c:\sdl\include\sdl_audio.h
+1255800450 c:\sdl\include\sdl_audio.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_endian.h"
@@ -127,23 +128,23 @@
 	"begin_code.h"
 	"close_code.h"
 
-1255804050 c:\sdl\include\sdl_error.h
+1255800450 c:\sdl\include\sdl_error.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1255804050 c:\sdl\include\sdl_endian.h
+1255800450 c:\sdl\include\sdl_endian.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1255804050 c:\sdl\include\sdl_mutex.h
+1255800450 c:\sdl\include\sdl_mutex.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"begin_code.h"
 	"close_code.h"
 
-1255804050 c:\sdl\include\sdl_thread.h
+1255800450 c:\sdl\include\sdl_thread.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_mutex.h"
@@ -151,24 +152,24 @@
 	<process.h>
 	"close_code.h"
 
-1255804050 c:\sdl\include\sdl_rwops.h
+1255800450 c:\sdl\include\sdl_rwops.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"begin_code.h"
 	"close_code.h"
 
-1255804050 c:\sdl\include\sdl_cdrom.h
+1255800450 c:\sdl\include\sdl_cdrom.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"begin_code.h"
 	"close_code.h"
 
-1255804050 c:\sdl\include\sdl_cpuinfo.h
+1255800450 c:\sdl\include\sdl_cpuinfo.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1255804050 c:\sdl\include\sdl_events.h
+1255800450 c:\sdl\include\sdl_events.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_active.h"
@@ -179,96 +180,99 @@
 	"begin_code.h"
 	"close_code.h"
 
-1255804050 c:\sdl\include\sdl_active.h
+1255800450 c:\sdl\include\sdl_active.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"begin_code.h"
 	"close_code.h"
 
-1255804050 c:\sdl\include\sdl_keyboard.h
+1255800450 c:\sdl\include\sdl_keyboard.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_keysym.h"
 	"begin_code.h"
 	"close_code.h"
 
-1255804050 c:\sdl\include\sdl_keysym.h
+1255800450 c:\sdl\include\sdl_keysym.h
 
-1255804050 c:\sdl\include\sdl_mouse.h
+1255800450 c:\sdl\include\sdl_mouse.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_video.h"
 	"begin_code.h"
 	"close_code.h"
 
-1255804050 c:\sdl\include\sdl_video.h
+1255800450 c:\sdl\include\sdl_video.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_rwops.h"
 	"begin_code.h"
 	"close_code.h"
 
-1255804050 c:\sdl\include\sdl_joystick.h
+1255800450 c:\sdl\include\sdl_joystick.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"begin_code.h"
 	"close_code.h"
 
-1255804050 c:\sdl\include\sdl_quit.h
+1255800450 c:\sdl\include\sdl_quit.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 
-1255804050 c:\sdl\include\sdl_loadso.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"begin_code.h"
-	"close_code.h"
-
-1255804050 c:\sdl\include\sdl_timer.h
+1255800450 c:\sdl\include\sdl_loadso.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"begin_code.h"
 	"close_code.h"
 
-1255804050 c:\sdl\include\sdl_version.h
+1255800450 c:\sdl\include\sdl_timer.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1255800450 c:\sdl\include\sdl_version.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1346974219 source:c:\repojuegos\matrix.cpp
+1346977819 source:c:\repojuegos\matrix.cpp
 	"matrix.h"
 
-1117203600 c:\sdl\include\gl\gl.h
+1117207200 c:\sdl\include\gl\gl.h
 
-1349224762 source:c:\repojuegos\escenario.cpp
+1350687314 source:c:\repojuegos\escenario.cpp
 	"Escenario.h"
+	"Engine.h"
 
-1349224800 c:\repojuegos\escenario.h
+1349228400 c:\repojuegos\escenario.h
 	"Objeto.h"
 	<list>
 
-1349474144 c:\repojuegos\objeto.h
+1350687314 c:\repojuegos\objeto.h
 	<list>
 	"Fuerza.h"
 	"Vector2.h"
 
-1348614682 source:c:\repojuegos\objeto.cpp
+1350687314 source:c:\repojuegos\objeto.cpp
 	"Objeto.h"
 
-1348614682 source:c:\repojuegos\rectangulo.cpp
+1350687314 source:c:\repojuegos\rectangulo.cpp
 	"Rectangulo.h"
+	"precision.h"
+	"Engine.h"
 
-1349222900 c:\repojuegos\rectangulo.h
+1350687314 c:\repojuegos\rectangulo.h
 	"Objeto.h"
 
-1349474024 c:\repojuegos\fuerza.h
+1350687314 c:\repojuegos\fuerza.h
 	"Vector2.h"
 	"precision.h"
 
-1349222901 source:c:\repojuegos\fuerza.cpp
+1350687314 source:c:\repojuegos\fuerza.cpp
 	"Fuerza.h"
 
-1349473917 c:\repojuegos\precision.h
+1349477517 c:\repojuegos\precision.h
 	<math.h>
 
 1350000197 source:c:\users\acer\desktop\obligatorio-juegos-electronicos\escenario.cpp
