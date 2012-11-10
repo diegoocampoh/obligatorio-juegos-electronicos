@@ -12,9 +12,19 @@ using namespace std;
 
 int main ( int argc, char** argv )
 {
+
     float theta = 0.0f;
     bool done = false;
     Escenario* esc = new Escenario();
+    Engine* Eng = Engine::Instance();
+    Engine::Instance()->push();
+    glTranslatef(0.0,0.0,-4.0);
+    Rectangulo* obj = new Rectangulo(0.05f,0.05f, 0.0005f);
+    obj->posicion = new Vector2(0,0);
+    obj->fuerzas.push_back(new Vector2(0,0.005f));
+    esc->objetos.push_back(obj);
+    Eng->clear();
+    Eng->update();
 
     // program main loop
     while (!done){
@@ -49,8 +59,8 @@ int main ( int argc, char** argv )
                     {
                         obj->posicion->x-=0.05f;
                     }
-                    esc->pintar();
                     break;
+                    esc->pintar();
                 }
             } // end switch
         } // end of message processing

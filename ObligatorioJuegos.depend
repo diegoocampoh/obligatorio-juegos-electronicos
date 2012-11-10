@@ -275,7 +275,7 @@
 1349477517 c:\repojuegos\precision.h
 	<math.h>
 
-1350000197 source:c:\users\acer\desktop\obligatorio-juegos-electronicos\escenario.cpp
+1350077982 source:c:\users\acer\desktop\obligatorio-juegos-electronicos\escenario.cpp
 	"Escenario.h"
 	"Engine.h"
 
@@ -283,12 +283,12 @@
 	"Objeto.h"
 	<list>
 
-1349838516 c:\users\acer\desktop\obligatorio-juegos-electronicos\objeto.h
+1350079661 c:\users\acer\desktop\obligatorio-juegos-electronicos\objeto.h
 	<list>
 	"Fuerza.h"
 	"Vector2.h"
 
-1349648192 c:\users\acer\desktop\obligatorio-juegos-electronicos\fuerza.h
+1350079251 c:\users\acer\desktop\obligatorio-juegos-electronicos\fuerza.h
 	"Vector2.h"
 	"precision.h"
 
@@ -298,19 +298,19 @@
 1349567292 c:\users\acer\desktop\obligatorio-juegos-electronicos\precision.h
 	<math.h>
 
-1349648255 source:c:\users\acer\desktop\obligatorio-juegos-electronicos\fuerza.cpp
+1350079324 source:c:\users\acer\desktop\obligatorio-juegos-electronicos\fuerza.cpp
 	"Fuerza.h"
 
-1349838540 source:c:\users\acer\desktop\obligatorio-juegos-electronicos\objeto.cpp
+1350080033 source:c:\users\acer\desktop\obligatorio-juegos-electronicos\objeto.cpp
 	"Objeto.h"
 
-1350007388 source:c:\users\acer\desktop\obligatorio-juegos-electronicos\rectangulo.cpp
+1350080079 source:c:\users\acer\desktop\obligatorio-juegos-electronicos\rectangulo.cpp
 	"Rectangulo.h"
-	"precision.h"
 	"Engine.h"
 
-1349628543 c:\users\acer\desktop\obligatorio-juegos-electronicos\rectangulo.h
+1350079679 c:\users\acer\desktop\obligatorio-juegos-electronicos\rectangulo.h
 	"Objeto.h"
+	"precision.h"
 
 1349565754 source:c:\users\acer\desktop\obligatorio-juegos-electronicos\matrix.cpp
 	"matrix.h"
@@ -326,7 +326,7 @@
 	<SDL.h>
 	<assert.h>
 
-1350007254 source:c:\users\acer\desktop\obligatorio-juegos-electronicos\main.cpp
+1350079525 source:c:\users\acer\desktop\obligatorio-juegos-electronicos\main.cpp
 	<stdlib.h>
 	<SDL.h>
 	<iostream>
