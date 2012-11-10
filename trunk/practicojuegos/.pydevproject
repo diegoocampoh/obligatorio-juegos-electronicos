@@ -6,10 +6,5 @@
 <path>/practicojuegos</path>
 </pydev_pathproperty>
 <pydev_pathproperty name="org.python.pydev.PROJECT_EXTERNAL_SOURCE_PATH">
-<path>C:\Users\ACER\Desktop\Project\Project\__pycache__\movingObject.cpython-32.pyc</path>
-<path>C:\Users\ACER\Desktop\Project\Project\__pycache__\tBall.cpython-32.pyc</path>
-<path>C:\Users\ACER\Desktop\Project\Project\__pycache__\tGraphics.cpython-32.pyc</path>
-<path>C:\Users\ACER\Desktop\Project\Project\__pycache__\tMath.cpython-32.pyc</path>
-<path>C:\Users\ACER\Desktop\Project\Project\__pycache__\tWall.cpython-32.pyc</path>
 </pydev_pathproperty>
 </pydev_project>
