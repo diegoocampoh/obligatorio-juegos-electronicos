@@ -13,7 +13,8 @@ class Objeto
         virtual ~Objeto();
         real* vertices;
         real* colores;
-        std::list<Fuerza*> fuerzas;
+        real masa;
+        std::list<Vector2*> fuerzas;
         Vector2* posicion;
         Vector2* velocidad;
 
