@@ -29,34 +29,11 @@ class Application(Frame):
                                     command=self.master.destroy)
         self.canvas=Canvas(root, width=cw, height=ch, background="black")
         self.canvas.grid(row=1, column=0, columnspan=50)
-        point = Vector(40,40)
-        pv = Vector(20,40)
-        self.paintPoint(point, "white")
-        self.paintPoint(pv, "blue")
-        rotatedPoint = rotate(point, Vector(20,20), -0.5)
-        a = Vector(210, 245)
-        self.paintPoint(a, "white")
-        b = Vector(260, 170)
-        self.canvas.create_line(a.x,a.y,b.x, b.y, fill="red")
-        self.paintPoint(b, "white")
-        c = Vector(210, 177)
-        self.paintPoint(c, "white")
-        d = Vector(286, 258)
-        self.paintPoint(d, "white")
-        self.canvas.create_line(c.x,c.y,d.x, d.y, fill="red")
-        
-        intersect = intersection(a, b, c, d)
-        if intersect != None:
-            self.paintPoint(intersect, "green")
-        distance = distancePointToSegment(a, b, c)
-        if distance != None:
-            print distance
-        self.paintPoint(rotatedPoint, "red")
         self.canvas.bind( "<Button-1>", paint )
         self.startButton.grid(row=0, column=0)
         self.stopButton.grid(row=0, column=1)
         self.quitButton.grid(row=0, column=2)
-        initialize(self.canvas)
+        dynamicObjects = initialize(self.canvas)
     
     def runAnimation(self):
         while(self.animate):
@@ -70,13 +47,11 @@ class Application(Frame):
         x1, y1 = ( point.x - 1 ), ( point.y - 1 )
         x2, y2 = ( point.x + 1 ), ( point.y + 1 )
         self.canvas.create_oval( x1, y1, x2, y2, fill = color )
-
+    
         
     
 def paint( event ):
     python_green = "white"
-    print event.x
-    print event.y
     x1, y1 = ( event.x - 1 ), ( event.y - 1 )
     x2, y2 = ( event.x + 1 ), ( event.y + 1 )
     app.canvas.create_oval( x1, y1, x2, y2, fill = python_green )
@@ -88,7 +63,7 @@ root.title("Thomas Schwarz: AI, hw1")
 cw = 1000
 ch = 1000
 frameTime=100 #milliseconds between frame updates
-
+root.bind("<Key>", key)
 app = Application(master=root)
 app.mainloop()
 #root.destroy()

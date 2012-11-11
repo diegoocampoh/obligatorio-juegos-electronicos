@@ -24,7 +24,10 @@ class Vector(object):
         return Vector(nr*self.x, nr*self.y)
     def normalize(self, newLength):
         d = math.sqrt(self.x*self.x + self.y*self.y)
-        return Vector(newLength*self.x/d, newLength*self.y/d)
+        if d!=0:
+            return Vector(newLength*self.x/d, newLength*self.y/d)
+        else:
+            return Vector(newLength*self.x, newLength*self.y)
 
 class Matrix(object):
     def __init__(self, a11, a12, a21, a22):
