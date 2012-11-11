@@ -26,8 +26,11 @@ class tSheep(tBall):
             if self.location.y > level.hiY-5*speed:
                 acc += Vector(0,-self.maxAcceleration)
             farmer = dynamicObjects[0]
+            wolf = dynamicObjects[1]
             if acc.x == 0 and acc.y == 0:
                 if distancePointToPoint(farmer.location, self.location) <= 100:
                     acc += self.location - farmer.location
+                if distancePointToPoint(wolf.location, self.location) <=100:
+                    acc += self.location - wolf.location
             return acc
         

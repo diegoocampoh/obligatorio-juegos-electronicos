@@ -34,7 +34,7 @@ class tWolf(tBall):
                     if "sheep" in ob.tag :
                         if not ob.isDead:
                             distance = distancePointToPoint(self.location, ob.location)
-                            if distance <=1:
+                            if distance <=10:
                                 ob.isDead = True
                             else:
                                 if distance < bestDistance:
