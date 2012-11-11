@@ -14,7 +14,7 @@ class movingObject(object):
         self.changeVelocity = False
         
     def update(self, level, dynamicObjects):
-        self.acceleration = steering.getAcceleration(self, level, dynamicObjects)
+        self.acceleration = self.getAcceleration(level, dynamicObjects)
         if abs(self.acceleration) > self.maxAcceleration:
             self.acceleration = self.acceleration.normalize(self.maxAcceleration)
         speed = abs(self.velocity)
@@ -24,6 +24,32 @@ class movingObject(object):
         elif abs(self.velocity)> self.maxVelocity:
             self.velocity = self.velocity.normalize(self.maxVelocity)
         self.location += self.velocity
+    
+    def getAcceleration(self, level, dynamicObjects):
+        #avoid leaving box
+        self.acceleration
+        acc = Vector(0,0) 
+        speed = abs(self.velocity)
+        if self.location.x < level.loX+5*speed:
+            acc += Vector(self.maxAcceleration,0)
+        if self.location.y < level.loY+5*speed:
+            acc += Vector(0,self.maxAcceleration)
+        if self.location.x > level.hiX-5*speed:
+            acc += Vector(-self.maxAcceleration,0)
+        if self.location.y > level.hiY-5*speed:
+            acc += Vector(0,-self.maxAcceleration)
+        if acc.x == 0 and acc.y== 0:
+            for ob in dynamicObjects:
+                if ob != self and self != dynamicObjects[0]:
+                    if distancePointToPoint(ob.location, self.location) < 20:
+                        acc -= ob.location - self.location
+        if acc.x == 0 and acc.y== 0:
+            ob = dynamicObjects[0]
+            if ob != self:
+                acc += ob.location - self.location
+        if acc.x == 0 and acc.y== 0:
+            acc += Vector(random.random()-0.5, random.random()-0.5)
+        return acc
 
     def __repr__(self):
         return "s={}, v={}, a={}".format(self.location,
@@ -31,31 +57,31 @@ class movingObject(object):
                                          self.acceleration)
             
         
-class steering(object):
-    @staticmethod
-    def getAcceleration(mOb, level, dynamicObjects):
-        #avoid leaving box
-        acc = Vector(0,0) 
-        speed = abs(mOb.velocity)
-        if mOb.location.x < level.loX+5*speed:
-            acc += Vector(mOb.maxAcceleration,0)
-        if mOb.location.y < level.loY+5*speed:
-            acc += Vector(0,mOb.maxAcceleration)
-        if mOb.location.x > level.hiX-5*speed:
-            acc += Vector(-mOb.maxAcceleration,0)
-        if mOb.location.y > level.hiY-5*speed:
-            acc += Vector(0,-mOb.maxAcceleration)
-        if acc.x == 0 and acc.y== 0:
-            for ob in dynamicObjects:
-                if ob != mOb and mOb != dynamicObjects[0]:
-                    if distancePointToPoint(ob.location, mOb.location) < 20:
-                        acc -= ob.location - mOb.location
-        if acc.x == 0 and acc.y== 0:
-            ob = dynamicObjects[0]
-            if ob != mOb:
-                acc += ob.location - mOb.location
-        if acc.x == 0 and acc.y== 0:
-            acc += Vector(random.random()-0.5, random.random()-0.5)
-        return acc      
+#class steering(object):
+#    @staticmethod
+#    def getAcceleration(mOb, level, dynamicObjects):
+#        #avoid leaving box
+#        acc = Vector(0,0) 
+#        speed = abs(mOb.velocity)
+#        if mOb.location.x < level.loX+5*speed:
+#            acc += Vector(mOb.maxAcceleration,0)
+#        if mOb.location.y < level.loY+5*speed:
+#            acc += Vector(0,mOb.maxAcceleration)
+#        if mOb.location.x > level.hiX-5*speed:
+#            acc += Vector(-mOb.maxAcceleration,0)
+#        if mOb.location.y > level.hiY-5*speed:
+#            acc += Vector(0,-mOb.maxAcceleration)
+#        if acc.x == 0 and acc.y== 0:
+#            for ob in dynamicObjects:
+#                if ob != mOb and mOb != dynamicObjects[0]:
+#                    if distancePointToPoint(ob.location, mOb.location) < 20:
+#                        acc -= ob.location - mOb.location
+#        if acc.x == 0 and acc.y== 0:
+#            ob = dynamicObjects[0]
+#            if ob != mOb:
+#                acc += ob.location - mOb.location
+#        if acc.x == 0 and acc.y== 0:
+#            acc += Vector(random.random()-0.5, random.random()-0.5)
+#        return acc      
         
 	
