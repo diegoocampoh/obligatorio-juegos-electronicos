@@ -45,7 +45,7 @@ b1 = tBall.tBall(5, tMath.Vector(100,100), color="yellow", tag="b1")
 b2 = tBall.tBall(7, tMath.Vector(150,200), color="yellow", tag="b2")
 farmer = tFarmer.tFarmer(tMath.Vector(random.randint(0,640),random.randint(0,640)))
 wolf = tWolf.tWolf(tMath.Vector(random.randint(300,640),random.randint(300,640)))
-back = tBackground.tBackground(imagefile="c:\mapa.gif")
+back = tBackground.tBackground(imagefile="c:\mapa2.gif")
 corral = tCorral.tCorral(tMath.Vector(0,0), 230)
 
 dynamicObjects = [farmer, wolf]

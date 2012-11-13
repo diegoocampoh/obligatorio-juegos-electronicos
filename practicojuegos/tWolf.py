@@ -1,4 +1,6 @@
 from tBall import *
+from Tkinter import *
+import Tkinter
 import sys
 
 class tWolf(tBall):
@@ -46,4 +48,13 @@ class tWolf(tBall):
                 if bestTarget != None:
                     acc += bestTarget.location - self.location
         return acc
+    
+    def paint(self, canvas):
+        xc, yc = int(self.location.x), int(self.location.y)
+                  
+        self.image = PhotoImage(file="c:/wolfAnim.gif")    
+        self.imageId= canvas.create_image(xc, yc, anchor=Tkinter.CENTER ,image=self.image)
+
+    
+           
         
