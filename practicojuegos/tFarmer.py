@@ -7,7 +7,7 @@ class tFarmer(tBall):
         self.maxAcceleration = 5
         self.maxVelocity = 5
     
-    def getAcceleration(self, level, dynamicObjects):
+    def getAcceleration(self, level, dynamicObjects, staticObjects,diccionario):
         #avoid leaving box
         return self.acceleration
         

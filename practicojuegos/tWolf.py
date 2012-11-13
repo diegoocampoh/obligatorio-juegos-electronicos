@@ -8,7 +8,7 @@ class tWolf(tBall):
         self.maxVelocity = 5
         self.velocity = Vector(3,3)
     
-    def getAcceleration(self, level, dynamicObjects):
+    def getAcceleration(self, level, dynamicObjects, staticObjects,diccionario):
         #avoid leaving box
         acc = Vector(0,0) 
         speed = abs(self.velocity)
@@ -23,16 +23,20 @@ class tWolf(tBall):
         bestDistance = sys.maxint
         bestTarget = None
         farmer = dynamicObjects[0]
+        corral = diccionario['corral']
         # si no tengo que esquivar muros
         if acc.x == 0 and acc.y == 0:
-            # escapa del granjero
-            if distancePointToPoint(self.location, farmer.location) <= 100:
+            # escapa del granjero y de la puerta del corral
+            if(distancePointToPoint(self.location, corral.centro)<=corral.radioProteccion):
+                acc += self.location - corral.centro
+            
+            if (distancePointToPoint(self.location, farmer.location) <= 100):
                 acc += self.location - farmer.location
             else:
                 # ataca ovejas
                 for ob in dynamicObjects:
                     if "sheep" in ob.tag :
-                        if not ob.isDead:
+                        if not ob.isDead and not ob.isInCorral:
                             distance = distancePointToPoint(self.location, ob.location)
                             if distance <=10:
                                 ob.isDead = True
