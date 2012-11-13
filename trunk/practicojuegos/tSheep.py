@@ -1,5 +1,6 @@
 from tBall import *
 from Tkinter import *
+import Tkinter
 
 class tSheep(tBall):
     def __init__(self, location, tag = ""):
@@ -67,8 +68,8 @@ class tSheep(tBall):
             self.aliveImage = PhotoImage(file="c:/aliveSheep.gif")
             self.deadImage = PhotoImage(file="c:/deadSheep.gif")            
             if (not self.isDead):
-                self.aliveImageId = canvas.create_image(xc, yc, image=self.aliveImage)
+                self.aliveImageId = canvas.create_image(xc, yc,anchor=Tkinter.CENTER, image=self.aliveImage)
             else:
-                self.deadImageId = canvas.create_image(xc, yc, image=self.deadImage)
+                self.deadImageId = canvas.create_image(xc, yc,anchor=Tkinter.CENTER, image=self.deadImage)
  
         
