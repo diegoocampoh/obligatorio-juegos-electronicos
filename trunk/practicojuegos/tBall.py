@@ -14,6 +14,7 @@ class tBall(movingObject):
         offset = int(self.size/2)
         canvas.create_oval(xc-offset, yc-offset, xc+offset, yc+offset,
                            fill=self.color, tags=self.tag)
+         
     def changeMaxVelocity(self,newValue):
         self.maxVelocity = newValue
         

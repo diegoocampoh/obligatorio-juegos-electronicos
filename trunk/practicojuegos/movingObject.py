@@ -13,8 +13,8 @@ class movingObject(object):
         self.tag = tag
         self.changeVelocity = False
         
-    def update(self, level, dynamicObjects):
-        self.acceleration = self.getAcceleration(level, dynamicObjects)
+    def update(self, level, dynamicObjects,staticObjects, diccionario):
+        self.acceleration = self.getAcceleration(level, dynamicObjects,staticObjects,diccionario)
         if abs(self.acceleration) > self.maxAcceleration:
             self.acceleration = self.acceleration.normalize(self.maxAcceleration)
         speed = abs(self.velocity)
@@ -25,7 +25,7 @@ class movingObject(object):
             self.velocity = self.velocity.normalize(self.maxVelocity)
         self.location += self.velocity
     
-    def getAcceleration(self, level, dynamicObjects):
+    def getAcceleration(self, level, dynamicObjects, diccionario):
         #avoid leaving box
         self.acceleration
         acc = Vector(0,0) 

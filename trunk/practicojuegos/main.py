@@ -59,10 +59,10 @@ def paint( event ):
         
 
 root = Tk()
-root.title("Thomas Schwarz: AI, hw1")
-cw = 1000
-ch = 1000
-frameTime=100 #milliseconds between frame updates
+root.title("Cuidando las ovejitas")
+cw = 640
+ch = 640
+frameTime=10 #milliseconds between frame updates
 root.bind("<Key>", key)
 app = Application(master=root)
 app.mainloop()
