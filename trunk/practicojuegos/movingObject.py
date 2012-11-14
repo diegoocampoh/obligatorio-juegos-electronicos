@@ -1,5 +1,7 @@
 from tMath import *
+import tWall
 import random
+import tBall
 
 class movingObject(object):
     def __init__(self, location, velocity, acceleration=Vector(0,0), tag="",
@@ -14,7 +16,17 @@ class movingObject(object):
         self.changeVelocity = False
         
     def update(self, level, dynamicObjects,staticObjects, diccionario):
+        puntoAEvitar = self.manejarColision(diccionario)
         self.acceleration = self.getAcceleration(level, dynamicObjects,staticObjects,diccionario)
+        
+        if puntoAEvitar != None:
+            if (self == diccionario['farmer']):
+                self.velocity = Vector(0,0)
+                self.acceleration = Vector(0,0)
+                return
+            self.acceleration += self.location - puntoAEvitar
+        
+        
         if abs(self.acceleration) > self.maxAcceleration:
             self.acceleration = self.acceleration.normalize(self.maxAcceleration)
         speed = abs(self.velocity)
@@ -56,6 +68,49 @@ class movingObject(object):
                                          self.velocity,
                                          self.acceleration)
             
+        
+    def manejarColision(self,diccionario):
+        canvas = diccionario.get('canvas')
+        if (self.velocity.x == 0 and self.velocity.y == 0):
+            return None
+        wals = diccionario.get('obstaculos')
+        xc, yc = int(self.location.x), int(self.location.y)
+        destino = Vector(xc, yc) + self.velocity
+        destino.x = destino.x + (20 * self.velocity.x)
+        destino.y = destino.y + (20 * self.velocity.y)
+        
+        rayo = tWall.tWall(Vector(xc, yc), destino,
+             color="green", tag=self.tag+"rayoPosta")
+        distanciaMax = 1000
+        puntoR = None
+        for w in wals:
+            #vemos si se corta
+            punto = intersection(Vector(rayo.x1, rayo.y1), Vector(rayo.x2, rayo.y2),
+                                  Vector(w.x1, w.y1),Vector(w.x2, w.y2))
+            if (punto != None):
+                print("colision con : "+str(punto))
+                puntoColision = tBall.tBall(5, punto, color="red")
+                puntoColision.paint(canvas)       
+                
+                distanciam = distancia(self.location, punto)              
+                if distanciam <= distanciaMax:
+                    distanciaMax = distanciam
+                    puntoR = punto
+        return puntoR
+
+                    
+                  
+
+        
+        
+                
+            
+            
+            
+       
+        
+        
+        
         
 #class steering(object):
 #    @staticmethod
