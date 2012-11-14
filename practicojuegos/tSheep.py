@@ -1,12 +1,14 @@
 from tBall import *
 from Tkinter import *
 import Tkinter
+import tWall
 
 class tSheep(tBall):
     def __init__(self, location, tag = ""):
         tBall.__init__(self, 10, location, "white", "sheep" + tag)
         self.maxAcceleration = 2
         self.maxVelocity = 2
+        self.acceleration = 0
         self.velocity = Vector(2,2)
         self.isDead = False
         self.aliveImage = None
@@ -60,13 +62,20 @@ class tSheep(tBall):
                     acc += self.location - farmer.location
                 if distancePointToPoint(wolf.location, self.location) <=100:
                     acc += self.location - wolf.location
+            self.acceleration = acc
             return acc
         
     def paint(self, canvas):
             xc, yc = int(self.location.x), int(self.location.y)
             offset = int(self.size/2)            
+            
             self.aliveImage = PhotoImage(file="c:/aliveSheep.gif")
-            self.deadImage = PhotoImage(file="c:/deadSheep.gif")            
+            self.deadImage = PhotoImage(file="c:/deadSheep.gif")    
+            rayo = tWall.tWall(Vector(xc, yc), self.acceleration +Vector(xc*10, yc*10),
+                 color="green", tag=self.tag+"rayo")
+            
+            rayo.paint(canvas)        
+            
             if (not self.isDead):
                 self.aliveImageId = canvas.create_image(xc, yc,anchor=Tkinter.CENTER, image=self.aliveImage)
             else:
