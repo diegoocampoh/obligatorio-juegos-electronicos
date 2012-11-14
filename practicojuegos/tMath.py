@@ -49,27 +49,88 @@ def rotate(pt, pivot, alpha):
     rotation = Matrix(math.cos(alpha), -math.sin(alpha), math.sin(alpha), math.cos(alpha)) * o
     return rotation + pivot
 
+#def intersection(a, b, c, d):
+#    a1 = Vector(0,0)
+#    b1 = b - a
+#    c1 = c - a
+#    d1 = d - a
+#    distance = math.sqrt(b1.x*b1.x + b1.y*b1.y)
+#    
+#    if (distance == 0):
+#        return None
+#    
+#    cosalpha = b1.x / distance
+#    sinalpha = b1.y / distance
+#    rotationMatrix = Matrix(cosalpha, sinalpha, -sinalpha, cosalpha)
+#    a1 = rotationMatrix * a1
+#    b1 = rotationMatrix * b1
+#    c1 = rotationMatrix * c1
+#    d1 = rotationMatrix * d1
+#    
+#    if(c1.y -d1.y == 0):
+#        return None
+#    
+#    x = (c1.y*d1.x - c1.x*d1.y) / (c1.y - d1.y)
+#    
+#    if (x > 0 and ((b1.x - x <= b1.x) and (x <= b1.x))):
+#        intersect = Vector(x, 0)
+#        intersect = Matrix(cosalpha, -sinalpha, sinalpha, cosalpha) * intersect + a
+#        return intersect
+#    else:
+#        return None
+    
 def intersection(a, b, c, d):
-    a1 = Vector(0,0)
-    b1 = b - a
-    c1 = c - a
-    d1 = d - a
-    distance = math.sqrt(b1.x*b1.x + b1.y*b1.y)
-    cosalpha = b1.x / distance
-    sinalpha = b1.y / distance
-    rotationMatrix = Matrix(cosalpha, sinalpha, -sinalpha, cosalpha)
-    a1 = rotationMatrix * a1
-    b1 = rotationMatrix * b1
-    c1 = rotationMatrix * c1
-    d1 = rotationMatrix * d1
-    x = (c1.y*d1.x - c1.x*d1.y) / (c1.y - d1.y)
-    if x > 0 and x <b1.x:
-        intersect = Vector(x, 0)
-        intersect = Matrix(cosalpha, -sinalpha, sinalpha, cosalpha) * intersect + a
-        return intersect
+    origen = Vector(0,0)
+    distanciaAb = distancia(a,b)
+    pivote = a
+    puntaRotacion = b
+    a = a - pivote
+    b = b - pivote
+    c = c - pivote
+    d = d - pivote
+    puntaRotacion = puntaRotacion - pivote
+    
+    pivoteOld = pivote
+    pivote = pivote - pivote
+    
+    cosAlpha = puntaRotacion.x / distanciaAb
+    sinAlpha = puntaRotacion.y / distanciaAb    
+    
+    angulo = math.asin(sinAlpha)
+    
+    if (puntaRotacion.x < 0 ):
+        angulo = angulo * -1
+        
+    a = rotate(a, pivote, -angulo)
+    b = rotate(b, pivote, -angulo)
+    c = rotate(c, pivote, -angulo)
+    d = rotate(d, pivote, -angulo)
+    
+    cruzan = False
+    
+    if (c.y * d.y >= 0):
+        return None
     else:
+   
+        #Hallo corte con X y veo si cae dentro del rango a-b
+        interseccion = (c.y*d.x - c.x*d.y)/(c.y-d.y)
+        if ( interseccion >= a.x and interseccion <= b.x):
+            cruzan = True
+        else:
+            if (interseccion >= b.x and interseccion <= a.x):                    
+                cruzan = True        
+        if cruzan:
+            interseccion = Vector(interseccion, 0)
+            interseccion = rotate(interseccion, pivote,angulo)
+            interseccion = interseccion + pivoteOld
+            return interseccion
         return None
     
+def distancia(vector1, vector2):
+    deltax = abs(vector2.x - vector1.x)
+    deltay = abs(vector2.y - vector1.y)
+    return math.sqrt( (math.pow(deltax, 2) + math.pow(deltay,2)))
+
 def distancePointToPoint(a,b):
     c = a - b 
     return math.sqrt(math.pow(c.x, 2) + math.pow(c.y, 2))

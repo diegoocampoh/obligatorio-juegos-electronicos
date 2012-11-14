@@ -2,6 +2,7 @@ from tBall import *
 from Tkinter import *
 import Tkinter
 import tWall
+import math
 
 class tSheep(tBall):
     def __init__(self, location, tag = ""):
@@ -16,6 +17,7 @@ class tSheep(tBall):
         self.deadImage = None
         self.deadImageId = None
         self.isInCorral = False
+        
    
     
     def getAcceleration(self, level, dynamicObjects,staticObjects,diccionario):
@@ -66,19 +68,23 @@ class tSheep(tBall):
             return acc
         
     def paint(self, canvas):
-            xc, yc = int(self.location.x), int(self.location.y)
-            offset = int(self.size/2)            
-            
-            self.aliveImage = PhotoImage(file="c:/aliveSheep.gif")
-            self.deadImage = PhotoImage(file="c:/deadSheep.gif")    
-            rayo = tWall.tWall(Vector(xc, yc), self.acceleration +Vector(xc*10, yc*10),
-                 color="green", tag=self.tag+"rayo")
-            
-            rayo.paint(canvas)        
-            
-            if (not self.isDead):
-                self.aliveImageId = canvas.create_image(xc, yc,anchor=Tkinter.CENTER, image=self.aliveImage)
-            else:
-                self.deadImageId = canvas.create_image(xc, yc,anchor=Tkinter.CENTER, image=self.deadImage)
+        self.deadImage = PhotoImage(file="c:/deadSheep.gif")   
+        self.aliveImage = PhotoImage(file="c:/aliveSheep.gif") 
+        xc, yc = int(self.location.x), int(self.location.y)
+        if (self.isDead):
+            self.deadImageId = canvas.create_image(xc, yc,anchor=Tkinter.CENTER, image=self.deadImage)
+            return
+        else:            
+#            canvas.delete(self.tag+"rayo")
+#            destino = Vector(xc, yc) + self.velocity
+#            destino.x = destino.x + (50 * self.velocity.x)
+#            destino.y = destino.y + (50 * self.velocity.y)
+#            
+#            rayo = tWall.tWall(Vector(xc, yc), destino,
+#                 color="green", tag=self.tag+"rayo")
+#            
+#            rayo.paint(canvas)                    
+            self.aliveImageId = canvas.create_image(xc, yc,anchor=Tkinter.CENTER, image=self.aliveImage)
+               
  
         

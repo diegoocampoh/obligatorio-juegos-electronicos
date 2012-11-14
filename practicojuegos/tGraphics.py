@@ -48,12 +48,13 @@ wolf = tWolf.tWolf(tMath.Vector(random.randint(300,640),random.randint(300,640))
 back = tBackground.tBackground(imagefile="c:\mapa2.gif")
 corral = tCorral.tCorral(tMath.Vector(0,0), 230)
 
-dynamicObjects = [farmer, wolf]
-staticObjects = [back,corral,w1,w2,w21,w22,w3,w31,w32, h1, h6,w6]
+dynamicObjects = [farmer]
+staticObjects = [back,corral,w2,w21,w22,w3,w31,w32, w1 ,h1, h6,w6]
 
-dicObjects = {'limiteXCorral': w3.x1 , 'limiteYCorral':w2.y1, 'corral':corral}
+dicObjects = {'limiteXCorral': w3.x1 , 'limiteYCorral':w2.y1, 'corral':corral,
+               'obstaculos':[w2, w21, w22, w3, w31, w32, w1 ,h1, h6,w6], 'farmer':farmer}
 
-for i in range(10):
+for i in range(5):
     dynamicObjects.append(tSheep.tSheep(tMath.Vector(random.randint(corral.radioProteccion,640),random.randint(corral.radioProteccion,640)), tag=str(i)))
 #    dynamicObjects.append(tBall.tBall(3,
 #        tMath.Vector(random.randint(0,500),random.randint(0,500)),
@@ -90,11 +91,12 @@ def initialize(canvas):
     
      
 def myPaint(canvas):
-   for ob in dynamicObjects:
-        canvas.delete(ob.tag)
-        ob.update(level, dynamicObjects,staticObjects,dicObjects)
-        ob.paint(canvas)
-   canvas.update()
+    dicObjects['canvas'] = canvas
+    for ob in dynamicObjects:
+         canvas.delete(ob.tag)
+         ob.update(level, dynamicObjects,staticObjects,dicObjects)
+         ob.paint(canvas)
+    canvas.update()
    
 
 def key(event):
