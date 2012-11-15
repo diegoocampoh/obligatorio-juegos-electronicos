@@ -31,14 +31,14 @@ class tSheep(tBall):
             self.velocity = Vector(0,0)
             return Vector(0,0)
         else:
-            acc = Vector(0,0) 
+            acc = movingObject.getAcceleration(self, level, dynamicObjects,staticObjects,diccionario) 
             speed = abs(self.velocity)
             
             
             if ((self.location.x < corralx) and
                 (self.location.y < corraly) and not self.isInCorral) :
                 self.isInCorral = True
-            
+    
             if self.isInCorral :
                 if self.location.x < level.loX+5*speed:
                     acc += Vector(self.maxAcceleration,0)
@@ -48,22 +48,24 @@ class tSheep(tBall):
                     acc += Vector(-self.maxAcceleration,0)
                 if self.location.y > corraly-5*speed:
                     acc += Vector(0,-self.maxAcceleration)
-            else: 
-                if self.location.x < level.loX+5*speed:
-                    acc += Vector(self.maxAcceleration,0)
-                if self.location.y < level.loY+5*speed:
-                    acc += Vector(0,self.maxAcceleration)
-                if self.location.x > level.hiX-5*speed:
-                    acc += Vector(-self.maxAcceleration,0)
-                if self.location.y > level.hiY-5*speed:
-                    acc += Vector(0,-self.maxAcceleration)
+#            else: 
+#                if self.location.x < level.loX+5*speed:
+#                    acc += Vector(self.maxAcceleration,0)
+#                if self.location.y < level.loY+5*speed:
+#                    acc += Vector(0,self.maxAcceleration)
+#                if self.location.x > level.hiX-5*speed:
+#                    acc += Vector(-self.maxAcceleration,0)
+#                if self.location.y > level.hiY-5*speed:
+#                    acc += Vector(0,-self.maxAcceleration)
             farmer = dynamicObjects[0]
             wolf = dynamicObjects[1]
-            if acc.x == 0 and acc.y == 0:
+            if acc.x == 0 and acc.y== 0:
                 if distancePointToPoint(farmer.location, self.location) <= 100:
                     acc += self.location - farmer.location
                 if distancePointToPoint(wolf.location, self.location) <=100:
                     acc += self.location - wolf.location
+            if acc.x == 0 and acc.y== 0:
+                acc += Vector(random.random()-0.5, random.random()-0.5)
             self.acceleration = acc
             return acc
         
