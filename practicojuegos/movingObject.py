@@ -14,19 +14,10 @@ class movingObject(object):
         self.maxVelocity = maxVelocity
         self.tag = tag
         self.changeVelocity = False
+        self.target = None
         
     def update(self, level, dynamicObjects,staticObjects, diccionario):
-        puntoAEvitar = self.manejarColision(diccionario)
         self.acceleration = self.getAcceleration(level, dynamicObjects,staticObjects,diccionario)
-        
-        if puntoAEvitar != None:
-            if (self == diccionario['farmer']):
-                self.velocity = Vector(0,0)
-                self.acceleration = Vector(0,0)
-                return
-            self.acceleration += self.location - puntoAEvitar
-        
-        
         if abs(self.acceleration) > self.maxAcceleration:
             self.acceleration = self.acceleration.normalize(self.maxAcceleration)
         speed = abs(self.velocity)
@@ -36,10 +27,14 @@ class movingObject(object):
         elif abs(self.velocity)> self.maxVelocity:
             self.velocity = self.velocity.normalize(self.maxVelocity)
         self.location += self.velocity
+        if(self.target !=None and distancePointToPoint(self.target, self.location) <= 5):
+            self.target = None
     
-    def getAcceleration(self, level, dynamicObjects, diccionario):
+    def getAcceleration(self, level, dynamicObjects,staticObjects,diccionario):
         #avoid leaving box
-        self.acceleration
+        puntoAEvitar = self.manejarColision(diccionario)
+        if(puntoAEvitar != None and self.target == None):
+            self.target= self.location + 5*(self.location - puntoAEvitar)
         acc = Vector(0,0) 
         speed = abs(self.velocity)
         if self.location.x < level.loX+5*speed:
@@ -50,17 +45,12 @@ class movingObject(object):
             acc += Vector(-self.maxAcceleration,0)
         if self.location.y > level.hiY-5*speed:
             acc += Vector(0,-self.maxAcceleration)
-        if acc.x == 0 and acc.y== 0:
-            for ob in dynamicObjects:
-                if ob != self and self != dynamicObjects[0]:
-                    if distancePointToPoint(ob.location, self.location) < 20:
-                        acc -= ob.location - self.location
-        if acc.x == 0 and acc.y== 0:
-            ob = dynamicObjects[0]
-            if ob != self:
-                acc += ob.location - self.location
-        if acc.x == 0 and acc.y== 0:
-            acc += Vector(random.random()-0.5, random.random()-0.5)
+        if(self.target != None):
+            acc += self.target - self.location 
+        for ob in dynamicObjects:
+            if ob != self and self != dynamicObjects[0]:
+                if distancePointToPoint(ob.location, self.location) < 20:
+                    acc += self.location - ob.location
         return acc
 
     def __repr__(self):
@@ -76,13 +66,11 @@ class movingObject(object):
         wals = diccionario.get('obstaculos')
         xc, yc = int(self.location.x), int(self.location.y)
         destino = Vector(xc, yc) + self.velocity
-        destino.x = destino.x + (20 * self.velocity.x)
-        destino.y = destino.y + (20 * self.velocity.y)
+        destino.x = destino.x + (self.velocity.x)
+        destino.y = destino.y + (self.velocity.y)
         
         rayo = tWall.tWall(Vector(xc, yc), destino,
              color="green", tag=self.tag+"rayoPosta")
-        distanciaMax = 1000
-        puntoR = None
         for w in wals:
             #vemos si se corta
             punto = intersection(Vector(rayo.x1, rayo.y1), Vector(rayo.x2, rayo.y2),
@@ -91,12 +79,8 @@ class movingObject(object):
                 print("colision con : "+str(punto))
                 puntoColision = tBall.tBall(5, punto, color="red")
                 puntoColision.paint(canvas)       
-                
-                distanciam = distancia(self.location, punto)              
-                if distanciam <= distanciaMax:
-                    distanciaMax = distanciam
-                    puntoR = punto
-        return puntoR
+                return punto
+        return None
 
                     
                   

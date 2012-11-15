@@ -8,6 +8,13 @@ class tFarmer(tBall):
         self.velocity = Vector(0,0)
         self.maxAcceleration = 5
         self.maxVelocity = 5
+        
+    def update(self, level, dynamicObjects,staticObjects, diccionario):
+        tBall.update(self, level, dynamicObjects, staticObjects, diccionario)
+        speed = abs(self.velocity) 
+        if self.location.x <= level.loX+5*speed or self.location.y <= level.loY+5*speed or self.location.x >= level.hiX-5*speed or self.location.y >= level.hiY-5*speed:
+            self.location -= self.velocity
+            self.velocity = Vector(0,0) 
     
     def getAcceleration(self, level, dynamicObjects, staticObjects,diccionario):
         #avoid leaving box
