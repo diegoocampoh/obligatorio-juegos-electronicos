@@ -9,16 +9,16 @@ class tFarmer(tBall):
         self.maxAcceleration = 5
         self.maxVelocity = 5
         
-    def update(self, level, dynamicObjects,staticObjects, diccionario):
-        tBall.update(self, level, dynamicObjects, staticObjects, diccionario)
-        speed = abs(self.velocity) 
-        if self.location.x <= level.loX+5*speed or self.location.y <= level.loY+5*speed or self.location.x >= level.hiX-5*speed or self.location.y >= level.hiY-5*speed:
-            self.location -= self.velocity
-            self.velocity = Vector(0,0) 
-    
-    def getAcceleration(self, level, dynamicObjects, staticObjects,diccionario):
-        #avoid leaving box
-        return self.acceleration
+#    def update(self, level, dynamicObjects,staticObjects, diccionario):
+#        tBall.update(self, level, dynamicObjects, staticObjects, diccionario)
+#        speed = abs(self.velocity) 
+#        if self.location.x <= level.loX+5*speed or self.location.y <= level.loY+5*speed or self.location.x >= level.hiX-5*speed or self.location.y >= level.hiY-5*speed:
+#            self.location -= self.velocity
+#            self.velocity = Vector(0,0) 
+#    
+#    def getAcceleration(self, level, dynamicObjects, staticObjects,diccionario):
+#        #avoid leaving box
+#        return self.acceleration
     def paint(self, canvas):
         xc, yc = int(self.location.x), int(self.location.y)
         self.image = PhotoImage(file="c:/guardian.gif")    

@@ -76,9 +76,9 @@ class movingObject(object):
             punto = intersection(Vector(rayo.x1, rayo.y1), Vector(rayo.x2, rayo.y2),
                                   Vector(w.x1, w.y1),Vector(w.x2, w.y2))
             if (punto != None):
-                print("colision con : "+str(punto))
-                puntoColision = tBall.tBall(5, punto, color="red")
-                puntoColision.paint(canvas)       
+#                print("colision con : "+str(punto))
+#                puntoColision = tBall.tBall(5, punto, color="red")
+#                puntoColision.paint(canvas)       
                 return punto
         return None
 

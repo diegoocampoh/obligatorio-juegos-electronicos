@@ -43,19 +43,19 @@ pc1 =tBall.tBall(5, tMath.Vector(0,0), color="blue", tag="bpc")
 
 b1 = tBall.tBall(5, tMath.Vector(100,100), color="yellow", tag="b1")
 b2 = tBall.tBall(7, tMath.Vector(150,200), color="yellow", tag="b2")
-farmer = tFarmer.tFarmer(tMath.Vector(random.randint(0,640),random.randint(0,640)))
-wolf = tWolf.tWolf(tMath.Vector(random.randint(300,640),random.randint(300,640)))
-back = tBackground.tBackground(imagefile="c:\mapa2.gif")
+farmer = tFarmer.tFarmer(tMath.Vector(random.randint(320,340),random.randint(320,340)))
+wolf = tWolf.tWolf(tMath.Vector(random.randint(0,100),random.randint(500,640)))
+back = tBackground.tBackground(imagefile="c:\mapa3.gif")
 corral = tCorral.tCorral(tMath.Vector(0,0), 230)
 
-dynamicObjects = [farmer]
-staticObjects = [back,corral,w2,w21,w22,w3,w31,w32, w1 ,h1, h6,w6]
+dynamicObjects = [farmer, wolf]
+staticObjects = [corral,w2,w21,w22,w3,w31,w32, w1 ,h1, h6,w6,back]
 
 dicObjects = {'limiteXCorral': w3.x1 , 'limiteYCorral':w2.y1, 'corral':corral,
                'obstaculos':[w2, w21, w22, w3, w31, w32, w1 ,h1, h6,w6], 'farmer':farmer}
 
 for i in range(5):
-    dynamicObjects.append(tSheep.tSheep(tMath.Vector(random.randint(corral.radioProteccion,640),random.randint(corral.radioProteccion,640)), tag=str(i)))
+    dynamicObjects.append(tSheep.tSheep(tMath.Vector(random.randint(corral.radioProteccion,640),random.randint(corral.radioProteccion,240)), tag=str(i)))
 #    dynamicObjects.append(tBall.tBall(3,
 #        tMath.Vector(random.randint(0,500),random.randint(0,500)),
 #        color="white", tag="ba"+str(i)))
