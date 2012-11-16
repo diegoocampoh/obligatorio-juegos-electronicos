@@ -12,7 +12,8 @@ class tWolf(tBall):
     
     def getAcceleration(self, level, dynamicObjects, staticObjects,diccionario):
         #avoid leaving box
-        acc = Vector(0,0) 
+        acc = movingObject.getAcceleration(self, level, dynamicObjects,staticObjects,diccionario) 
+        
         speed = abs(self.velocity)
         if self.location.x < level.loX+5*speed:
             acc += Vector(self.maxAcceleration,0)
@@ -40,7 +41,7 @@ class tWolf(tBall):
                     if "sheep" in ob.tag :
                         if not ob.isDead and not ob.isInCorral:
                             distance = distancePointToPoint(self.location, ob.location)
-                            if distance <=10:
+                            if distance <=30:
                                 ob.isDead = True
                             else:
                                 if distance < bestDistance:
